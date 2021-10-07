@@ -31,7 +31,7 @@ EMAIL_HOST_USER='photophotolic@gmail.com'
 EMAIL_HOST_PASSWORD='Photo7878'
 EMAIL_USE_TLS=True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','weselll.herokuapp.com']
 
 
 # Application definition

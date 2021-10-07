@@ -1,1 +1,1 @@
-web: gunicorn jugal.wsgi --log-file -
+web: gunicorn laptop.wsgi --log-file -

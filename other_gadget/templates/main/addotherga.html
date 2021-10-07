@@ -1,0 +1,13 @@
+{% load static %}
+    <head>
+    
+    <link href="{% static 'additem.css' %}" rel="stylesheet" />
+
+</head>
+<center>
+<p>Add-Other-Gadget</p>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+{{othergaform.as_p}}
+<input type="submit" name="" id="">
+</form></center>

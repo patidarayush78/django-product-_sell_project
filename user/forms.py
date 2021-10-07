@@ -17,6 +17,15 @@ class UserRegisterForm1(UserCreationForm):
 		
 		model = User
 		fields = ['username', 'email', 'password1', 'password2','first_name']
+		labels = {
+            'username': (''),
+            'email': (''),
+            'password1': (''),
+            'password2': (''),
+            'first_name': (''),
+
+
+        }
 		
 
 class emailform(forms.ModelForm):

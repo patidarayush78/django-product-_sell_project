@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -41,3 +42,9 @@ class user_enquiry1(models.Model):
     
     message=models.CharField(max_length=200)
    
+class orderla(models.Model):
+    brand=models.CharField(max_length=20,default='')
+    priceo=models.IntegerField()
+    coverphotoo=models.ImageField()
+    user=models.ForeignKey(User,null=True,default=1,on_delete=models.SET_NULL)
+    dateorder=models.DateTimeField(null=True,default=None)

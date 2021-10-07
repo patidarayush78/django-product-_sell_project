@@ -1,11 +1,26 @@
 from django.shortcuts import render
 from .forms import addlap, enquiryform
-from .models import laptop, user_enquiry1
+from .models import laptop, orderla, user_enquiry1
+from random import randint
 # Create your views here.
 
 
 def laptopdetail(request,id):
+    od=id
     displaymore=laptop.objects.get(pk=id) 
+    n=randint(1,2)
+    rand=laptop.objects.get(pk=n)
+
+
+    n1=randint(1,2)
+    rand1=laptop.objects.get(pk=n1)
+    
+    n2=randint(1,2)
+    rand2=laptop.objects.get(pk=n2)
+
+    n3=randint(1,2)
+    rand3=laptop.objects.get(pk=n3)
+
     brand=displaymore.brand_name
     price=displaymore.price
 
@@ -20,14 +35,28 @@ def laptopdetail(request,id):
             rm=enfm.cleaned_data['address']
             ro=enfm.cleaned_data['message']
            
-           
+            
           
             reg=user_enquiry1(full_name=br,phone_no=pr,district=orp,address=rm,message=ro,brand_name=pc,price=sc)
             reg.save()
+            ord=laptop.objects.get(pk=id) 
+            todos=orderla.objects.filter(user=request.user)
+            for i in todos:
+
+                ap=i.user
+
+   
+            us=ap
+            bn=ord.brand_name
+            pr=ord.price
+            cp=ord.coverphoto
+            reg=orderla(brand=bn,priceo=pr,coverphotoo=cp,user=us)
+            reg.save()
+            
             
     else:
         enfm=enquiryform()
-    return render(request,'main/productdetaillap.html',{'dsl':displaymore,'enqforml':enfm})
+    return render(request,'main/productdetaillap.html',{'dsl':displaymore,'enqforml':enfm,'dsm1':od,'randm':rand,'randm1':rand1,'randm2':rand2,'randm3':rand3})
 
 def additemlap(request):
     return render(request,'main/additemlap.html')
@@ -64,3 +93,11 @@ def lappage(request):
         fm=addlap()
      
     return render(request,'main/addlap.html',{'lapform':fm})
+
+
+def laptopcart(request):
+    if request.user.is_authenticated:
+       todos=orderla.objects.filter(user=request.user)  
+       return render(request,'main/laptopcart.html',{'todo':todos})
+    else:
+        return render(request,'emptycart.html')

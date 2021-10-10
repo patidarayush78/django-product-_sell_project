@@ -34,7 +34,7 @@ from django.contrib.auth import views as auth
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   path('signup/', user_view.signup, name ='signup'),
+    path('signup/', user_view.signup, name ='signup'),
     path('', user_view.home, name ='home'),
     path('current/', user_view.todo, name ='current'),
     path('email/', user_view.email, name ='email'),

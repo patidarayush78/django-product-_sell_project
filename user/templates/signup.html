@@ -1,11 +1,143 @@
-{% extends 'base.html' %}
-{% block content %}
+{% load static %}
+<!-- <head>
+<link href="{% static 'formcss/signup_logincss/signup.css' %}" rel="stylesheet" />
+</head>
+    
+    <div class="signup__container">
+        
+        <div class="container__child signup__form">
+            {% if user.is_authenticated %}
+          
 
-{{error}}
-<form method="POST">
+<form action="{% url 'logout' %}" method="POST">
     {% csrf_token %}
-{{form.as_p}}
-<button type="submit">signup</button>
-</form>
+    <h4 style="color: black;position:absolute;top:30px;">  logged in as {{user.username }}</h4><button class="btn btn--form2" type="submit">logout</button>
 
-{% endblock %}
+</form>
+{% else %}
+<div id='loginb'>
+    <h4 style="color: black;"> have already account? <a class="btn btn--form1" href="{% url 'login' %}">login</a></h4></div>
+{% endif %}
+          
+           <h1 style="color: black;">{{error}}</h1>
+            <form method="POST">
+                {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn--form" type="submit" value="Register" />
+        </form>
+            
+           
+           
+        </div>
+      </div> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WeSell</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="login">
+    <div class="form">
+        {% if user.is_authenticated %}
+          
+
+       
+        {% else %}
+        <div id='loginb'>
+            <h4 style="color: black;"> have already account? <a class="btn btn--form1" href="{% url 'login' %}">login</a></h4></div>
+        {% endif %}
+                  
+                   <h1 style="color: black;">{{error}}</h1>
+                   <form class="login-form" method="POST">
+                    {% csrf_token %}
+                {{form}}
+                <button class="btn btn--form" type="submit" value="Register" >register</button>
+            </form>
+        
+        
+      
+    </div>
+</div>
+	<style>
+   @import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+.login {
+  width: 300px;
+  padding: 15%;
+  padding-left: 2px;
+  margin: auto;
+}
+
+
+body {
+    background: #3d3d3d; 
+    font-family: "Lato", sans-serif;     
+  }
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+.form input {
+    font-family: "Lato", sans-serif;
+    outline: 0;
+    background: #e7e4e4;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+.form button {
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #262725;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+
+.form button:hover,.form button:active,.form button:focus {
+    background: #3d3d3d;
+  }
+
+.form .registration-form {
+    display: none;
+  }
+
+body {
+    background: #3d3d3d; 
+    font-family: "Lato", sans-serif;     
+  }
+
+/* 
+
+baltlogs.com */
+
+
+    </style>
+</body>
+</html>
+

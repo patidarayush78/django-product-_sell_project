@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -5,11 +6,11 @@ class laptop(models.Model):
     brand_name=models.CharField(max_length=20)
     price=models.IntegerField()
     original_price=models.IntegerField()
-    ram=models.IntegerField()
-    ssd=models.IntegerField()
-    hdd=models.IntegerField()
+    ram=models.CharField(max_length=20)
+    ssd=models.CharField(max_length=20)
+    hdd=models.CharField(max_length=20)
     pgeneration=models.IntegerField()
-    screensize=models.IntegerField()
+    screensize=models.CharField(max_length=20)
     processor=models.CharField(max_length=20)
     description=models.CharField(max_length=300)
     coverphoto=models.ImageField()
@@ -41,3 +42,9 @@ class user_enquiry1(models.Model):
     
     message=models.CharField(max_length=200)
    
+class orderla(models.Model):
+    brand=models.CharField(max_length=20,default='')
+    priceo=models.IntegerField()
+    coverphotoo=models.ImageField()
+    user=models.ForeignKey(User,null=True,default=1,on_delete=models.SET_NULL)
+    dateorder=models.DateTimeField(null=True,default=None)

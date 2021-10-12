@@ -1,0 +1,45 @@
+<style>
+    body{
+        margin-left: 23px;
+        zoom: 350%;
+        
+        
+    }
+    table a{
+        
+        
+        font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #f3d4d4;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+    }
+    table tr th{
+        text-transform: capitalize;
+         padding: 10px 10px 10px 10px;
+       
+    }
+</style>
+<body>
+    <h2>update your Mobiles</h2>
+<table border="1">
+    {% for i in up %}
+    <tr>
+        <th>
+          {{i.brand_name}} 
+        </th>
+        <th>
+            {{i.price}} 
+          </th>
+       
+ <th>      
+<a href="{% url 'updateothergapage' i.id %}">update</a>
+</th>
+</tr>
+{% endfor %}
+</table>
+</body>

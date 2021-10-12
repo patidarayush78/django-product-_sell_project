@@ -13,6 +13,7 @@ class addmobile(forms.ModelForm):
 class enquiryform(forms.ModelForm):
     class Meta:
         model=user_enquiry1
+        
         fields='__all__'
         exclude = ['brand_name','price']
         labels = {

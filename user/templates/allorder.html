@@ -1,0 +1,235 @@
+<style>
+table tr th{
+    text-transform: capitalize;
+     padding: 10px 10px 10px 10px;
+   
+}
+body{
+        margin-left: 23px;
+       
+        
+        
+    }
+</style>
+
+<body>
+<h1>Mobile orders</h1>
+<table border="1">
+
+{% for i in menq %}
+<tr>
+        <th>
+{{i.brand_name}}
+</th>
+
+<th>
+    {{i.price}}
+    </th>
+
+    <th>
+        {{i.full_name}}
+        </th>
+
+        <th>
+            {{i.phone_no}}
+            </th>
+
+    <th>
+{{i.district}}
+</th>
+<th>
+    {{i.address}}
+    </th>
+
+    <th>
+        {{i.message}}
+        </th>
+
+</tr>
+{% endfor %}
+</table>
+
+
+<h1>Laptop orders</h1>
+<table border="1">
+
+{% for i in lenq %}
+<tr>
+        <th>
+{{i.brand_name}}
+</th>
+
+<th>
+    {{i.price}}
+    </th>
+
+    <th>
+        {{i.full_name}}
+        </th>
+
+        <th>
+            {{i.phone_no}}
+            </th>
+
+    <th>
+{{i.district}}
+</th>
+<th>
+    {{i.address}}
+    </th>
+
+    <th>
+        {{i.message}}
+        </th>
+
+</tr>
+{% endfor %}
+</table>
+
+
+<h1>Kitchen orders</h1>
+<table border="1">
+
+{% for i in kenq %}
+<tr>
+        <th>
+{{i.brand_name}}
+</th>
+
+<th>
+    {{i.price}}
+    </th>
+
+    <th>
+        {{i.full_name}}
+        </th>
+
+        <th>
+            {{i.phone_no}}
+            </th>
+
+    <th>
+{{i.district}}
+</th>
+<th>
+    {{i.address}}
+    </th>
+
+    <th>
+        {{i.message}}
+        </th>
+
+</tr>
+{% endfor %}
+</table>
+
+<h1>Lighting orders</h1>
+<table border="1">
+
+{% for i in lienq %}
+<tr>
+        <th>
+{{i.brand_name}}
+</th>
+
+<th>
+    {{i.price}}
+    </th>
+
+    <th>
+        {{i.full_name}}
+        </th>
+
+        <th>
+            {{i.phone_no}}
+            </th>
+
+    <th>
+{{i.district}}
+</th>
+<th>
+    {{i.address}}
+    </th>
+
+    <th>
+        {{i.message}}
+        </th>
+
+</tr>
+{% endfor %}
+</table>
+
+
+
+<h1>cooler+Fan orders</h1>
+<table border="1">
+
+{% for i in cfenq %}
+<tr>
+        <th>
+{{i.brand_name}}
+</th>
+
+<th>
+    {{i.price}}
+    </th>
+
+    <th>
+        {{i.full_name}}
+        </th>
+
+        <th>
+            {{i.phone_no}}
+            </th>
+
+    <th>
+{{i.district}}
+</th>
+<th>
+    {{i.address}}
+    </th>
+
+    <th>
+        {{i.message}}
+        </th>
+
+</tr>
+{% endfor %}
+</table>
+
+<h1>Other-Gadget orders</h1>
+<table border="1">
+
+{% for i in ogenq %}
+<tr>
+        <th>
+{{i.brand_name}}
+</th>
+
+<th>
+    {{i.price}}
+    </th>
+
+    <th>
+        {{i.full_name}}
+        </th>
+
+        <th>
+            {{i.phone_no}}
+            </th>
+
+    <th>
+{{i.district}}
+</th>
+<th>
+    {{i.address}}
+    </th>
+
+    <th>
+        {{i.message}}
+        </th>
+
+</tr>
+{% endfor %}
+</table>
+</body>
